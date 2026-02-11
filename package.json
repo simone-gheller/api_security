@@ -1,0 +1,21 @@
+{
+  "name": "natter",
+  "version": "1.0.0",
+  "description": "natter api from book 'api securty in action'",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "author": "simone",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@prisma/adapter-better-sqlite3": "^7.4.0",
+    "@prisma/client": "^7.4.0",
+    "dotenv": "^17.2.4",
+    "fastify": "^5.7.4",
+    "prisma": "^7.4.0"
+  }
+}

@@ -1,0 +1,26 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Space {
+  id          String   @id @default(uuid())
+  name        String   
+  owner       String
+  messages    Message[]
+}
+
+model Message {
+  id          String   @id @default(uuid())
+  content     String
+  author      String
+  time        DateTime @default(now())
+  spaceId     String
+  space       Space    @relation(fields: [spaceId], references: [id])
+}
